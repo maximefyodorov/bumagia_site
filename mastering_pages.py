@@ -53,6 +53,8 @@ for my_product in (my_products):
             # Ссылка на покупку (колонка 6)
             my_arr_buylink.append(ws.cell(row = i, column = 6).value)
 
+    # print(my_arr_name)
+
     templateLoader = jinja2.FileSystemLoader(searchpath='w:/home/bumagia/www/templates/Inner_templates/')
     templateEnv = jinja2.Environment(loader=templateLoader)
     tmplt = templateEnv.get_template('{}_template.html'.format(my_product))

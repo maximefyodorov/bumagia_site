@@ -100,7 +100,23 @@
         <p>Если же Вас интересуют наборы цветной бумаги, в которых от 100 до 500 листов, то ознакомиться с нашей
           линейком соответствующей продукции можно <a href="http://100listov.com.ua/mstandart_color.html">здесь</a>, а
           приобрести <a href="http://www.bumagiy.com/catalog/bumaga-a4-i-a3-tsvetnaya">здесь</a>.</p>
-        <h4>Наборы двусторонней <span class="red">цветной бумаги</span> (плотность 80 г/м<sup>2</sup>)</h4>
+        <h4>Наборы двусторонней <span class="red">цветной бумаги</span> (скоба, 80 г/м<sup>2</sup>)</h4>
+        <hr>{% for r in range (2) %}
+        <div class="row bottomspace">{% for i in range (5) %}{% set current = (r*5)+(i+1) %}{% set chart_number = ((current%2+current)/2)|int %}
+          <div class="ppr">
+            <div class="ppr_wrapper">
+              <div class="clrchrt"><img src="../images/twosides/cpe_0{{ chart_number }}.png"></div>
+              <a class="staple" href="../images/twosides/papsmp_{{ current }}_big.png" title="Набор на скобе {{ name_list[current-1] }}"><img
+                  src="../images/twosides/papsmp_{{ current }}.png"
+                  alt="Набор двусторонней цветной бумаги на скобе {{ name_list[current-1] }}"></a>
+              <p class="sub">{{ name_list[current-1] }}</p>
+              <a class="buybutton" itemprop="url"
+                href="{{ buylink_list[current-1] }}"
+                title="Купить двусторонней цветной бумаги на скобе {{ name_list[current-1] }}">В магазин</a>
+            </div>
+          </div>{% endfor %}
+        </div>{% endfor %}
+        <h4>Наборы двусторонней <span class="red">цветной бумаги</span> (конверт, 80 г/м<sup>2</sup>)</h4>
         <hr>
         <div class="row bottomspace">
           <div class="ppr">
@@ -222,7 +238,7 @@
             </div>
           </div>
         </div>
-        <h4>Наборы двустороннего <span class="red">цветного картона</span> (плотность 120 г/м<sup>2</sup>)</h4>
+        <h4>Наборы двустороннего <span class="red">цветного картона</span> (конверт, 120 г/м<sup>2</sup>)</h4>
         <hr>
         <div class="row bottomspace">
           <div class="ppr">
@@ -405,6 +421,7 @@
   <!-- Colorbox -->
   <script>
     $(document).ready(function () {
+      $(".staple").colorbox({ rel: 'staple' });
       $(".paper").colorbox({ rel: 'paper' });
       $(".carton").colorbox({ rel: 'carton' });
     });
