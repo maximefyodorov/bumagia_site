@@ -146,12 +146,18 @@
           </div>
         </div>
       </div>
-      <h4><span class="novelty">Новинка!</span> Набор закладок «Кошки» <span class="red">(BM-1154)</span></h4>
+      {% for i in range (i_num) %}<h4>{% if control[i] == 1 %}<span class="novelty">Новинка!</span>&nbsp;{% endif %}Набор закладок «{{ name_list[i] }}» (BM-{{ articul_list[i] }})</h4>
+      <hr>
+      <div class="row bottomspace">
+        {% for n in range (1,9,1) %}<a class="{{ articul_list[i] }}" href="../images/bookmarks/{{ articul_list[i] }}_0{{ n }}_big.{{ ext[i] }}" title="№ {{ n }}"><img src="../images/bookmarks/{{ articul_list[i] }}_0{{ n }}.{{ ext[i] }}" alt="Закладка {{ n }} из набора закладок для книг «{{ name_list[i] }}» ({{full_articul_list [i]}})"></a>{% endfor %}<a class="{{ articul_list[i] }}" href="../images/bookmarks/{{ articul_list[i] }}_00_big.{{ ext[i] }}" title="Оборот"><img src="../images/bookmarks/{{ articul_list[i] }}_00.{{ ext[i] }}" alt="Оборот закладки для книг из набора «{{ name_list[i] }}» ({{full_articul_list [i]}})"></a>
+        <a class="buybutton topspace" itemprop="url" href="{{ buylink_list[i] }}" title="Купить набор закладок для книг «{{ name_list[i] }}» ({{full_articul_list [i]}}) в розницу и оптом">В магазин</a>
+      </div>{% endfor %}
+      {#<!-- <h4><span class="novelty">Новинка!</span> Набор закладок «Кошки» <span class="red">(BM-1154)</span></h4>
       <hr>
       <div class="row bottomspace"> <a class="1154" href="../images/bookmarks/1154_01_big.jpg" title="№ 1"><img src="../images/bookmarks/1154_01.jpg" alt="Закладка для книг из набора «Кошки», закладка 1"></a> <a class="1154" href="../images/bookmarks/1154_02_big.jpg" title="№ 2"><img src="../images/bookmarks/1154_02.jpg" alt="Закладка для книг из набора «Кошки», закладка 2"></a> <a class="1154" href="../images/bookmarks/1154_03_big.jpg" title="№ 3"><img src="../images/bookmarks/1154_03.jpg" alt="Закладка для книг из набора «Кошки», закладка 3"></a> <a class="1154" href="../images/bookmarks/1154_04_big.jpg" title="№ 4"><img src="../images/bookmarks/1154_04.jpg" alt="Закладка для книг из набора «Кошки», закладка 4"></a> <a class="1154" href="../images/bookmarks/1154_05_big.jpg" title="№ 5"><img src="../images/bookmarks/1154_05.jpg" alt="Закладка для книг из набора «Кошки», закладка 5"></a> <a class="1154" href="../images/bookmarks/1154_06_big.jpg" title="№ 6"><img src="../images/bookmarks/1154_06.jpg" alt="Закладка для книг из набора «Кошки», закладка 6"></a> <a class="1154" href="../images/bookmarks/1154_07_big.jpg" title="№ 7"><img src="../images/bookmarks/1154_07.jpg" alt="Закладка для книг из набора «Кошки», закладка 7"></a> <a class="1154" href="../images/bookmarks/1154_08_big.jpg" title="№ 8"><img src="../images/bookmarks/1154_08.jpg" alt="Закладка для книг из набора «Кошки», закладка 8"></a> <a class="1154" href="../images/bookmarks/1154_00_big.jpg" title="Оборот"><img src="../images/bookmarks/1154_00.jpg" alt="Закладка для книг из набора «Кошки», оборот"></a> 
       <a class="buybutton topspace" itemprop="url" href="http://www.bumagiy.com/products/zakladki-dlya-knig-kartonnye-8-sht-v-nabore-bm-1154-koshki" title="Купить набор закладок для книг «Кошки» в розницу и оптом">В магазин</a> 
-      </div>
-      <h4><span class="novelty">Новинка!</span> Набор закладок «Собаки» <span class="red">(BM-1161)</span></h4>
+      </div> -->
+      <!-- <h4><span class="novelty">Новинка!</span> Набор закладок «Собаки» <span class="red">(BM-1161)</span></h4>
       <hr>
       <div class="row bottomspace"> <a class="1161" href="../images/bookmarks/1161_01_big.jpg" title="№ 1"><img src="../images/bookmarks/1161_01.jpg" alt="Закладка для книг из набора «Собаки», закладка 1"></a> <a class="1161" href="../images/bookmarks/1161_02_big.jpg" title="№ 2"><img src="../images/bookmarks/1161_02.jpg" alt="Закладка для книг из набора «Собаки», закладка 2"></a> <a class="1161" href="../images/bookmarks/1161_03_big.jpg" title="№ 3"><img src="../images/bookmarks/1161_03.jpg" alt="Закладка для книг из набора «Собаки», закладка 3"></a> <a class="1161" href="../images/bookmarks/1161_04_big.jpg" title="№ 4"><img src="../images/bookmarks/1161_04.jpg" alt="Закладка для книг из набора «Собаки», закладка 4"></a> <a class="1161" href="../images/bookmarks/1161_05_big.jpg" title="№ 5"><img src="../images/bookmarks/1161_05.jpg" alt="Закладка для книг из набора «Собаки», закладка 5"></a> <a class="1161" href="../images/bookmarks/1161_06_big.jpg" title="№ 6"><img src="../images/bookmarks/1161_06.jpg" alt="Закладка для книг из набора «Собаки», закладка 6"></a> <a class="1161" href="../images/bookmarks/1161_07_big.jpg" title="№ 7"><img src="../images/bookmarks/1161_07.jpg" alt="Закладка для книг из набора «Собаки», закладка 7"></a> <a class="1161" href="../images/bookmarks/1161_08_big.jpg" title="№ 8"><img src="../images/bookmarks/1161_08.jpg" alt="Закладка для книг из набора «Собаки», закладка 8"></a> <a class="1161" href="../images/bookmarks/1161_00_big.jpg" title="Оборот"><img src="../images/bookmarks/1161_00.jpg" alt="Закладка для книг из набора «Собаки», оборот"></a> 
       <a class="buybutton topspace" itemprop="url" href="http://www.bumagiy.com/products/zakladki-dlya-knig-kartonnye-8-sht-v-nabore-bm-1161-sobaki" title="Купить набор закладок для книг «Собаки» в розницу и оптом">В магазин</a> 
@@ -224,14 +230,13 @@
       <h4>Набор закладок «Раскраски-антистресс» <span class="red">(BM-4698)</span></h4>
       <hr>
       <div class="row bottomspace"> <a class="4698" href="../images/bookmarks/4698-01_big.png" title="№ 1"><img src="../images/bookmarks/4698-01.png" alt="Закладка-раскраска для книг из набора «Раскраски-антистресс», закладка 1"></a> <a class="4698" href="../images/bookmarks/4698-02_big.png" title="№ 2"><img src="../images/bookmarks/4698-02.png" alt="Закладка-раскраска для книг из набора «Раскраски-антистресс», закладка 2"></a> <a class="4698" href="../images/bookmarks/4698-03_big.png" title="№ 3"><img src="../images/bookmarks/4698-03.png" alt="Закладка-раскраска для книг из набора «Раскраски-антистресс», закладка 3"></a> <a class="4698" href="../images/bookmarks/4698-04_big.png" title="№ 4"><img src="../images/bookmarks/4698-04.png" alt="Закладка-раскраска для книг из набора «Раскраски-антистресс», закладка 4"></a> <a class="4698" href="../images/bookmarks/4698-05_big.png" title="№ 5"><img src="../images/bookmarks/4698-05.png" alt="Закладка-раскраска для книг из набора «Раскраски-антистресс», закладка 5"></a> <a class="4698" href="../images/bookmarks/4698-06_big.png" title="№ 6"><img src="../images/bookmarks/4698-06.png" alt="Закладка-раскраска для книг из набора «Раскраски-антистресс», закладка 6"></a> <a class="4698" href="../images/bookmarks/4698-07_big.png" title="№ 7"><img src="../images/bookmarks/4698-07.png" alt="Закладка-раскраска для книг из набора «Раскраски-антистресс», закладка 7"></a> <a class="4698" href="../images/bookmarks/4698-08_big.png" title="№ 8"><img src="../images/bookmarks/4698-08.png" alt="Закладка-раскраска для книг из набора «Раскраски-антистресс», закладка 8"></a> <a class="4698" href="../images/bookmarks/4698-00_big.png" title="Оборот"><img src="../images/bookmarks/4698-00.png" alt="Закладка-раскраска для книг из набора «Раскраски-антистресс», оборот"></a> 
-      <!--<p class="sub"></p></div>-->
       <a class="buybutton topspace" itemprop="url" href="http://www.bumagiy.com/products/zakladki-dlya-knig-kartonnye-8-sht-v-nabore-bm-4698-raskraska-antistress" title="Купить набор закладок для книг «Раскраски-антистресс» в розницу и оптом">В магазин</a> 
       </div>
       <h4>Набор закладок «Модные футболки» <span class="red">(BM-4704)</span></h4>
       <hr>
       <div class="row bottomspace"> <a class="4704" href="../images/bookmarks/4704-01_big.png" title="№ 1"><img src="../images/bookmarks/4704-01.png" alt="Прикольная закладка для книг из набора «Модные футболки», закладка 1"></a> <a class="4704" href="../images/bookmarks/4704-02_big.png" title="№ 2"><img src="../images/bookmarks/4704-02.png" alt="Прикольная закладка для книг из набора «Модные футболки», закладка 2"></a> <a class="4704" href="../images/bookmarks/4704-03_big.png" title="№ 3"><img src="../images/bookmarks/4704-03.png" alt="Прикольная закладка для книг из набора «Модные футболки», закладка 3"></a> <a class="4704" href="../images/bookmarks/4704-04_big.png" title="№ 4"><img src="../images/bookmarks/4704-04.png" alt="Прикольная закладка для книг из набора «Модные футболки», закладка 4"></a> <a class="4704" href="../images/bookmarks/4704-05_big.png" title="№ 5"><img src="../images/bookmarks/4704-05.png" alt="Прикольная закладка для книг из набора «Модные футболки», закладка 5"></a> <a class="4704" href="../images/bookmarks/4704-06_big.png" title="№ 6"><img src="../images/bookmarks/4704-06.png" alt="Прикольная закладка для книг из набора «Модные футболки», закладка 6"></a> <a class="4704" href="../images/bookmarks/4704-07_big.png" title="№ 7"><img src="../images/bookmarks/4704-07.png" alt="Прикольная закладка для книг из набора «Модные футболки», закладка 7"></a> <a class="4704" href="../images/bookmarks/4704-08_big.png" title="№ 8"><img src="../images/bookmarks/4704-08.png" alt="Прикольная закладка для книг из набора «Модные футболки», закладка 8"></a> <a class="4704" href="../images/bookmarks/4704-00_big.png" title="Оборот"><img src="../images/bookmarks/4704-00.png" alt="Прикольная закладка для книг из набора «Модные футболки», оборот"></a> 
        <a class="buybutton topspace" itemprop="url" href="http://www.bumagiy.com/products/zakladki-dlya-knig-kartonnye-8-sht-v-nabore-bm-4704-modnye-futbolki" title="Купить набор закладок для книг «Модные футболки» в розницу и оптом">В магазин</a> 
-      </div>
+      </div> -->#}
     </div>
   </div>
 </div>
@@ -294,24 +299,8 @@
 <script>
 	$(document).ready(function(){
 		$(".wholesalepacks").colorbox({rel:'wholesalepacks'});
-		$(".4858").colorbox({rel:'4858'});
-		$(".4889").colorbox({rel:'4889'});
-		$(".4865").colorbox({rel:'4865'});
-		$(".6180").colorbox({rel:'6180'});
-		$(".6197").colorbox({rel:'6197'});
-		$(".3905").colorbox({rel:'3905'});
-		$(".3912").colorbox({rel:'3912'});
-		$(".4612").colorbox({rel:'4612'});
-		$(".4704").colorbox({rel:'4704'});
-		$(".4681").colorbox({rel:'4681'});
-		$(".4698").colorbox({rel:'4698'});
-		$(".1154").colorbox({rel:'1154'});
-		$(".1161").colorbox({rel:'1161'});
-		$(".1130").colorbox({rel:'1130'});
-		$(".4902").colorbox({rel:'4902'});
-		$(".1123").colorbox({rel:'1123'});
-		$(".2014").colorbox({rel:'2014'});
-		
+		{% for art in articul_list %}$(".{{ art }}").colorbox({rel:'{{ art }}'});
+    {% endfor %}
 	});
 </script> 
 

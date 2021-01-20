@@ -29,11 +29,14 @@ for my_product in (my_products):
 
     ws = wb[my_product]
 
+
+    my_control = []
     my_arr_name = []
     my_arr_articul = []
     my_arr_full_articul = []
     my_arr_mame_and_articul = []
     my_arr_buylink = []
+    my_ext = []
 
     my_len = 0
 
@@ -42,6 +45,8 @@ for my_product in (my_products):
         control = ws.cell(row = i, column = 1).value 
         if (control != 0):
             my_len+=1
+            # Собираем ненулевые управляющие символы
+            my_control.append(ws.cell(row = i, column = 1).value)
             # Название (колонка 2)
             my_arr_name.append(ws.cell(row = i, column = 2).value)
             # Артикул без буквенной части - последние четыре цифры штрихкода (колонка 3)
@@ -52,6 +57,9 @@ for my_product in (my_products):
             my_arr_mame_and_articul.append(ws.cell(row = i, column = 5).value)
             # Ссылка на покупку (колонка 6)
             my_arr_buylink.append(ws.cell(row = i, column = 6).value)
+            # Расширение файла (колонка 7)
+            my_ext.append(ws.cell(row = i, column = 7).value)
+
 
     # print(my_arr_name)
 
@@ -66,11 +74,13 @@ for my_product in (my_products):
             prefix = '',
             p_data = products_data,
             i_num = my_len,
+            control = my_control,
             c_prod = my_product, 
             name_list = my_arr_name,
             articul_list = my_arr_articul,
             full_articul_list = my_arr_full_articul,
             fullnameandarticul_list = my_arr_mame_and_articul,
-            buylink_list = my_arr_buylink
+            buylink_list = my_arr_buylink,
+            ext = my_ext
         )
         dest.write(output.encode('utf-8'))
