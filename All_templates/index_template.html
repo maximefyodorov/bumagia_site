@@ -169,10 +169,10 @@
         {% for product in product_data %}{% set c_code = (product['code']|string)[9:] %}
       <div class="three columns center item mrg {{ page_data['alias']|lower }}">
         <h6>{{ product['articul'] }}</h6>
-        <a class="box" href="images/{{ page_data['section_name'] }}/{{ c_code }}_big.jpg" title="{{ page_data['section_name_rus'] }} {{ product['name_articul'] }}"><img src="images/{{ page_data['section_name'] }}/{{ c_code }}_v.jpg" alt="{{ page_data['section_name_rus'] }} {{ product['name_articul'] }}" title="{{ page_data['section_name_rus'] }} {{ product['name_articul'] }}"></a>
+        <a class="box" href="images/{{ page_data['section_name'] }}/{{ c_code }}_big.jpg" title="{{ page_data['section_menuitem'] }} {{ product['name_articul'] }}"><img src="images/{{ page_data['section_name'] }}/{{ c_code }}_v.jpg" alt="{{ page_data['section_menuitem'] }} {{ product['name_articul'] }}" title="{{ page_data['section_menuitem'] }} {{ product['name_articul'] }}"></a>
         <p>{{ page_data['product_parameter'] }}</p>
         <h5>{{ product['name'] }}</h5>
-        <a class="buybutton" itemprop="url" href="{{ product['buylink'] }}" title="Купить {{ page_data['section_name_rus']|lower }} {{ product['name_articul']}}">В магазин</a>
+        <a class="buybutton" itemprop="url" href="{{ product['buylink'] }}" title="{{ page_data['buylink_title'] }} {{ product['name_articul']}}">В магазин</a>
       </div>
       {% endfor %}
     </div>

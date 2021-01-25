@@ -3,8 +3,8 @@
 import jinja2
 import openpyxl
 
-wb = openpyxl.load_workbook('w:/home/bumagia/www/templates/bumagia_data_v2.xlsx', data_only=True)
-templateLoader = jinja2.FileSystemLoader(searchpath='w:/home/bumagia/www/templates/Inner_templates_v2/')
+wb = openpyxl.load_workbook('w:/home/bumagia/www/templates/bumagia_data.xlsx', data_only=True)
+templateLoader = jinja2.FileSystemLoader(searchpath='w:/home/bumagia/www/templates/All_templates/Inner_templates')
 templateEnv = jinja2.Environment(loader=templateLoader)
 
 ws = wb['common_data']
@@ -34,7 +34,7 @@ for i in range (2, ws.max_column):
                 product_data.append(row)
 
         tmplt = templateEnv.get_template('{}_template.html'.format(my_product))
-        with open('w:/home/bumagia/www/products_v2/{}.html'.format(my_product), 'wb') as dest:
+        with open('w:/home/bumagia/www/products/{}.html'.format(my_product), 'wb') as dest:
             output = tmplt.render(
                 menu_data = menu_data,
                 page_data = page_data,

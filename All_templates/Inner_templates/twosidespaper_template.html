@@ -6,10 +6,9 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>bumagia.com.ua | наборы цветной двусторонней бумаги и картона</title>
-  <meta name="description" content="Представляем наборы цветной двусторонней бумаги и картона">
-  <meta name="keywords"
-    content="цветная бумага, цветной картон, двусторонняя цветная бумага, двусторонний цветной картон">
+  <title>{{ page_data['page_html_title'] }}</title>
+  <meta name="description" content="{{ page_data['page_html_desc'] }}">
+  <meta name="keywords" content="{{ page_data['page_html_kw'] }}">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -106,13 +105,13 @@
           <div class="ppr">
             <div class="ppr_wrapper">
               <div class="clrchrt"><img src="../images/twosides/cpe_0{{ chart_number }}.png"></div>
-              <a class="staple" href="../images/twosides/papsmp_{{ current }}_big.png" title="Набор на скобе {{ name_list[current-1] }}"><img
+              <a class="staple" href="../images/twosides/papsmp_{{ current }}_big.png" title="Набор на скобе {{ product_data[current-1]['name'] }}"><img
                   src="../images/twosides/papsmp_{{ current }}.png"
-                  alt="Набор двусторонней цветной бумаги на скобе {{ name_list[current-1] }}"></a>
-              <p class="sub">{{ name_list[current-1] }}</p>
+                  alt="Набор двусторонней цветной бумаги на скобе {{ product_data[current-1]['name'] }}"></a>
+              <p class="sub">{{ product_data[current-1]['name'] }}</p>
               <a class="buybutton" itemprop="url"
-                href="{{ buylink_list[current-1] }}"
-                title="Купить двусторонней цветной бумаги на скобе {{ name_list[current-1] }}">В магазин</a>
+                href="{{ product_data[current-1]['buylink'] }}"
+                title="Купить набор двусторонней цветной бумаги на скобе {{ product_data[current-1]['name'] }}">В магазин</a>
             </div>
           </div>{% endfor %}
         </div>{% endfor %}
