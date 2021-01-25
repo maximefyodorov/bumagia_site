@@ -1,2 +1,2 @@
-              {% for i in range (p_num) %}
-              <li><a href="{{ prefix }}{{ p_list[i] }}.html">{{ menuname_list[i] }}</a></li>{% endfor %}
+              {% for menu_item in menu_data %}
+              <li><a href="{{ menu_item['prefix'] }}{{ menu_item['link'] }}.html">{{ menu_item['name'] }}</a></li>{% endfor %}
