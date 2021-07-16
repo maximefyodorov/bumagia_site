@@ -89,12 +89,12 @@
     <div class="row bottomspace">{% for product in product_data %}{% set c_code = (product['code']|string)[9:] %}
       <div class="{{ page_data['alias']|lower }}">
         <div class="{{ page_data['alias']|lower }}_wrapper">
-          <div class="dtl"><a class="ecofiller-CB" href="../images/ecofiller/{{ c_code }}_big.jpg" title="Экофиллер {{ product['name_articul'] }}"><img src="../images/ecofiller/{{ c_code }}_pack.jpg" alt="Экофиллер {{ product['name_articul'] }}" title="Экофиллер {{ product['name_articul'] }}"></a> </div>
+          <div class="dtl"><a class="{{ page_data['section_name'] }}-CB" href="../images/{{ page_data['section_name'] }}/{{ c_code }}_big.jpg" title="{{ page_data['section_menuitem'] }} {{ product['name_articul'] }}"><img src="../images/{{ page_data['section_name'] }}/{{ c_code }}_pack.png" alt="{{ page_data['section_menuitem'] }} {{ product['name_articul'] }}" title="{{ page_data['section_menuitem']}} {{ product['name_articul'] }}"></a> </div>
           <h6>{{ product['articul'] }}</h6>
-          <img src="../images/ecofiller/{{ c_code }}.jpg" alt="Экофиллер {{ product['name_articul'] }}" title="Экофиллер {{ product['name_articul'] }}">
+          <img src="../images/{{ page_data['section_name'] }}/{{ c_code }}.jpg" alt="{{ page_data['section_menuitem'] }} {{ product['name_articul'] }}" title="{{ page_data['section_menuitem'] }} {{ product['name_articul'] }}">
           <p>{{ page_data['product_parameter'] }}</p>
           <h5>{{ product['name'] }}</h5>
-          <a class="buybutton" itemprop="url" href="{{ product['buylink'] }}" title="Купить экофиллер {{ product['name_articul'] }}">В магазин</a> </div>
+          <a class="buybutton" itemprop="url" href="{{ product['buylink'] }}" title="{{ page_data['buylink_title'] }} {{ product['name_articul'] }}">В магазин</a> </div>
       </div>{% endfor %}         
     </div>
   </div>
@@ -155,7 +155,7 @@
 <!-- Colorbox --> 
 <script>
 $(document).ready(function(){
-	$(".ecofiller-CB").colorbox({rel:'ecofiller-CB'});
+	$(".{{ page_data['section_name'] }}-CB").colorbox({rel:'{{ page_data['section_name'] }}-CB'});
 });
 </script> 
 

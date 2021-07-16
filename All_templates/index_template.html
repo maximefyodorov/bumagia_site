@@ -164,7 +164,7 @@
 <div class="section">
   <div class="container showroom">
     <h1 id="newitems">Внимание, новинки!</h1>
-    <p class="center">{{ product_vitrina_text }}</p>
+    <p class="center">{{ page_data['product_vitrina_text'] }}</p>
     <div class="sliderrow">
         {% for product in product_data %}{% set c_code = (product['code']|string)[9:] %}
       <div class="three columns center item mrg {{ page_data['alias']|lower }}">

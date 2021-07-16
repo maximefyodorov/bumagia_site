@@ -13,7 +13,7 @@ menu_data = []
 for i in range (2, ws.max_column):
     menu_item = {}
     menu_item['link'] = ws.cell(row = 2, column = i).value
-    menu_item['name'] = ws.cell(row = 8, column = i).value
+    menu_item['name'] = ws.cell(row = 9, column = i).value
     menu_item['prefix'] = ''
     menu_data.append(menu_item)
 
